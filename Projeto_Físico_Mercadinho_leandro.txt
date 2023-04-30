@@ -1,0 +1,63 @@
+﻿
+-- CRIANDO As TABELAS --
+
+CREATE TABLE cliente(
+codigo_cliente INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR (50) NOT NULL,
+cpf BIGINT (11) UNSIGNED ZEROFILL NOT NULL UNIQUE);
+
+
+CREATE TABLE vendedor(
+codigo_vendedor INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR (50) NOT NULL,
+cpf BIGINT (11) UNSIGNED ZEROFILL NOT NULL UNIQUE);
+
+
+CREATE TABLE fornecedor(
+codigo_fornecedor INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR (50) NOT NULL,
+cnpj INT NOT NULL,
+telefone INT NOT NULL,
+endereço VARCHAR (50) NOT NULL,
+email VARCHAR (50) NOT NULL;
+
+
+CREATE TABLE produto(
+codigo_produto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+descricao VARCHAR (50) NOT NULL,
+estoque_inicial INT NOT NULL,
+estoque_atual INT NOT NULL,
+fornecedor VARCHAR (50) NOT NULL,
+preco_compra FLOAT NOT NULL,
+preco_venda float NOT NULL;
+
+
+
+CREATE TABLE pedido(
+codigo_pedido INT AUTO_INCREMENT PRIMARY KEY,
+cliente VARCHAR (50) NOT NULL,
+descricao VARCHAR (50) NOT NULL,
+data_compra DATE NOT NULL,
+FOREIGN KEY (codigo_vendedor),
+REFERENCES vendedor(codigo_vendedor)),
+FOREIGN KEY (codigo_cliente),
+REFERENCES cliente(codigo_cliente));
+
+
+CREATE TABLE item(
+codigo_item INT AUTO_INCREMENT PRIMARY KEY,
+descricao VARCHAR (50) NOT NULL,
+FOREIGN KEY (codigo_pedido),
+REFERENCES pedido(codigo_pedido)),
+FOREIGN KEY (codigo_produto),
+REFERENCES produto(codigo_produto));
+
+
+CREATE TABLE possui(
+FOREIGN KEY (codigo_fornecedor),
+REFERENCES fornecedor(codigo_fornecedor)),
+FOREIGN KEY (codigo_produto),
+REFERENCES produto(codigo_produto));
+
+
+
