@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Maio-2023 às 19:01
+-- Tempo de geração: 30-Maio-2023 às 13:29
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -33,6 +33,17 @@ CREATE TABLE `cliente` (
   `cpf` bigint(11) UNSIGNED ZEROFILL NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`codigo_cliente`, `nome`, `cpf`) VALUES
+(1, 'maria cristiane', 00000000088),
+(2, 'maria lopes', 00000000222),
+(3, 'titinha', 00000000333),
+(4, 'nininho', 00000004444),
+(5, 'tesouro', 00000000555);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +59,16 @@ CREATE TABLE `fornecedor` (
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`codigo_fornecedor`, `nome`, `cnpj`, `telefone`, `endereco`, `email`) VALUES
+(1, 'bemol', 00000003344, 987665454, 'avenida TORQUATO', 'BEMOL@gmail.com'),
+(2, 'TAPAJOS', 00000003355, 987665444, 'avenida das MARIAS', 'tapajos@gmail.com'),
+(3, 'NOVA ERA', 00000003366, 2147483647, 'avenida das torres', 'novaera@gmail.com'),
+(4, 'GABRIEL', 00000000000, 0, 'endereco', 'email');
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +81,18 @@ CREATE TABLE `item` (
   `codigo_produto` int(11) NOT NULL,
   `descricao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `item`
+--
+
+INSERT INTO `item` (`codigo_item`, `codigo_pedido`, `codigo_produto`, `descricao`) VALUES
+(4, 0, 0, 'ARROZ'),
+(5, 0, 0, 'FEIJAO'),
+(6, 0, 0, 'FARINHA'),
+(7, 0, 0, 'LEITE'),
+(8, 0, 0, 'MACARRAO'),
+(9, 0, 0, 'bolacha');
 
 -- --------------------------------------------------------
 
@@ -98,6 +131,15 @@ CREATE TABLE `pedido` (
   `data_compra` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `pedido`
+--
+
+INSERT INTO `pedido` (`codigo_pedido`, `codigo_cliente`, `codigo_vendedor`, `descricao`, `quantidade`, `data_compra`) VALUES
+(4, 0, 0, 'ARROZ', 10, '2023-05-25'),
+(5, 0, 0, 'FEIJAO', 5, '2023-05-25'),
+(6, 0, 0, 'MACARRAO', 3, '2023-05-25');
+
 -- --------------------------------------------------------
 
 --
@@ -115,6 +157,17 @@ CREATE TABLE `produto` (
   `codigo_fornecedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`codigo_produto`, `descricao`, `estoque_inicial`, `estoque_atual`, `fornecedor`, `preco_compra`, `preco_venda`, `codigo_fornecedor`) VALUES
+(4, 'ARROZ', 500, 300, 'BEMOL', 50, 60, 0),
+(5, 'FEIJAO', 500, 5, 'TAPAJOS', 50, 35, 0),
+(6, 'MACARRAO', 20000, 15000, 'NOVA ERA', 20, 25, 0),
+(7, 'FARINHA', 800, 700, 'NOVA ERA', 30, 35, 0),
+(8, 'LEITE', 600, 150, 'BEMOL', 20, 25, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -126,6 +179,15 @@ CREATE TABLE `vendedor` (
   `nome` varchar(50) NOT NULL,
   `cpf` bigint(11) UNSIGNED ZEROFILL NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `vendedor`
+--
+
+INSERT INTO `vendedor` (`codigo_vendedor`, `nome`, `cpf`) VALUES
+(1, 'jacira pimenta', 00000001212),
+(2, 'janaina ferreira', 00000001123),
+(3, 'gabriel feitosa', 00000001414);
 
 --
 -- Índices para tabelas despejadas
@@ -190,19 +252,19 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `codigo_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `codigo_fornecedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `codigo_item` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `login`
@@ -214,43 +276,19 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `codigo_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigo_produto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `vendedor`
 --
 ALTER TABLE `vendedor`
-  MODIFY `codigo_vendedor` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `item`
---
-ALTER TABLE `item`
-  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`codigo_pedido`) REFERENCES `pedido` (`codigo_pedido`),
-  ADD CONSTRAINT `item_ibfk_2` FOREIGN KEY (`codigo_produto`) REFERENCES `produto` (`codigo_produto`);
-
---
--- Limitadores para a tabela `pedido`
---
-ALTER TABLE `pedido`
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`codigo_cliente`) REFERENCES `cliente` (`codigo_cliente`),
-  ADD CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`codigo_vendedor`) REFERENCES `vendedor` (`codigo_vendedor`);
-
---
--- Limitadores para a tabela `produto`
---
-ALTER TABLE `produto`
-  ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`codigo_fornecedor`) REFERENCES `fornecedor` (`codigo_fornecedor`);
+  MODIFY `codigo_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
