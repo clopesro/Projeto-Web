@@ -1,0 +1,118 @@
+
+/*css do loginSenha do projeto mercadinho lenadro*/
+
+
+
+*{
+	margin: 0;
+	padding: 0;                                   
+	font-family: Arial, Helvetica, sans-serif;   
+	color:  black;
+	
+}
+
+html{
+	
+font-size: 62.5%;       
+
+}
+
+.form_login{    /*o form_login é uma classe*/
+
+	width:  500px;      /* largura */
+	margin: 7rem auto;   /* margem */
+	border-radius: 30px;
+	background-image: linear-gradient(red, yellow);
+	
+
+
+
+}
+
+h1{  
+
+	font-size: 4rem;                 /* tamanho da fonte */
+	color: white;                /* cor */
+	text-align: center;
+	border-radius: 8px;            /* raio da borda */
+	justify-content: center;
+	margin-bottom: 0rem;          /* margem inferior*/
+	margin-top: 5;
+	background: purple;
+	padding: 1rem;                 /* preenchimento*/
+	outline: none;
+	text-shadow: 8px 3px 4px #000000;
+
+
+}
+
+.logo_USUARIO{    /* configurações da imagem logo*/
+
+	width: 100px;                  /* largura*/
+	padding: 1rem;                 /* preenchimento*/
+	margin-top: 1.2rem;            /* margem superior*/
+	margin-bottom: 1.2rem;          /* margem inferior*/
+	margin-left: 18rem;
+	border: 2px groove rgba(255, 2550, 255, 0.1);  /* borda */
+	border-radius: 30px;            /* raio da borda */
+	outline: none;
+	align-content: center;
+
+}
+
+
+.agrupamento_login{     /* essas formatações sao para as bordas e para a imagem   */
+
+	display: flex;                            /* exibição flexível */
+	flex-direction: row;                     /* direção flexível POR LINHA(ROW)*/
+	justify-content: space-between;         /* justificar conteúdo */
+	align-items: center;                   /* itens de alinhamento: imagem */
+	border: 2px solid none;            /* borda */
+	padding: 7rem;                       /* preenchimento*/
+	border-radius: 30px;                 /* ARREDONDA AS BORDAS DO CANTO raio da borda */
+	
+
+}
+label,                       /* rótulo */
+input[type="text"],			/* entrada */
+input[type="password"],
+input[type="submit"]{
+
+
+	font-size: 1.8rem;   /* tamanho da fonte dos rótulos e dos inputs */
+}
+
+input[type="text"],    /* tamanho da fonte dos inputs do tipo text e password */
+input[type="password"]{
+
+	width: 300px;                  /* largura*/
+	padding: 1rem;                 /* preenchimento*/
+	margin-top: 1.2rem;            /* margem superior*/
+	margin-bottom: 1.2rem;          /* margem inferior*/
+	border: 2px groove rgba(255, 2550, 255, 0.1);  /* borda */
+	border-radius: 30px;            /* raio da borda */
+	outline: none;
+	color: black;
+
+	
+
+}
+
+input[type="submit"]{      	/* entrada */
+
+	width: 325px;    /* largura*/
+	padding: 1.2rem;   /* preenchimento*/
+	margin-top: 1.2rem; /* margem superior*/
+	margin-bottom: 1.2rem; /* margem inferior*/
+	border: 2px groove rgba(255, 2550, 255, 0.1); #944b6e; /* borda */
+	border-radius: 30px;   /* raio da borda */
+	background: darkblue;   /* plano de fundo */
+	color: #FFF;     /* cor */
+	cursor:pointer;   /* cursor */
+	outline color: skyblue;
+
+}
+.recuperar_senha{
+
+	color: blue;
+}
