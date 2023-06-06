@@ -1,9 +1,14 @@
 <?php //session_start();
 
-	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "";
-	$db_name = "mercadinho_leandro";
+	//$servidor = "localhost";
+	//$usuario = "root";
+	//$senha = "";
+	//$db_name = "mercadinho_leandro";
+
+	$servidor = "us-cdbr-east-06.cleardb.net";
+	$usuario = "b70da6efaeb485";
+	$senha = "b74961b2";
+	$db_name = "heroku_e03f3c801b1bfc4";
 	
 	
 	$conexao = mysqli_connect($servidor, $usuario, $senha, $db_name) or die('Banco de dados indisponível.');
