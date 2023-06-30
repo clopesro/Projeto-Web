@@ -48,7 +48,7 @@
 
 	<script>
 
-		function confirmar_exclusao(codigo_cliente) {
+		function confirmar_exclusao_cliente(codigo_cliente) {
 		     
 		     var resposta = confirm("Deseja continuar com a exclusão?");
 		     
@@ -58,72 +58,57 @@
 		     }
 		}
 
+	
+		function confirmar_exclusao_vendedor(codigo_vendedor) {
+
+			 var resposta = confirm("Deseja continuar com a exclusão?");
+
+			 if (resposta == true) {
+
+				  window.location.href = "excluir.php?codigo_vendedor="+codigo_vendedor;
+			 }
+		}
+
+		function confirmar_exclusao_fornecedor(codigo_fornecedor) {
+
+			 var resposta = confirm("Deseja continuar com a exclusão?");
+
+			 if (resposta == true) {
+
+				  window.location.href = "excluir.php?codigo_fornecedor="+codigo_fornecedor;
+			 }
+		}
+
+		function confirmar_exclusao_item(codigo_item) {
+
+			 var resposta = confirm("Deseja continuar com a exclusão?");
+
+			 if (resposta == true) {
+
+				  window.location.href = "excluir.php?codigo_item="+codigo_item;
+			 }
+		}
+
+		function confirmar_exclusao_pedido(codigo_pedido) {
+
+			 var resposta = confirm("Deseja continuar com a exclusão?");
+
+			 if (resposta == true) {
+
+				  window.location.href = "excluir.php?codigo_pedido="+codigo_pedido;
+			 }
+		}
+
+		function confirmar_exclusao_produto(codigo_produto) {
+
+			 var resposta = confirm("Deseja continuar com a exclusão?");
+
+			 if (resposta == true) {
+
+				  window.location.href = "excluir.php?codigo_produto="+codigo_produto;
+			 }
+		}
 	</script>
-
-<script>
-
-function confirmar_exclusao(codigo_vendedor) {
-	 
-	 var resposta = confirm("Deseja continuar com a exclusão?");
-	 
-	 if (resposta == true) {
-	 
-		  window.location.href = "excluir.php?codigo_vendedor="+codigo_vendedor;
-	 }
-}
-</script>
-
-<script>
-
-function confirmar_exclusao(codigo_fornecedor) {
-	 
-	 var resposta = confirm("Deseja continuar com a exclusão?");
-	 
-	 if (resposta == true) {
-	 
-		  window.location.href = "excluir.php?codigo_fornecedor="+codigo_fornecedor;
-	 }
-}
-</script>
-
-<script>
-
-function confirmar_exclusao(codigo_item) {
-	 
-	 var resposta = confirm("Deseja continuar com a exclusão?");
-	 
-	 if (resposta == true) {
-	 
-		  window.location.href = "excluir.php?codigo_item="+codigo_item;
-	 }
-}
-</script>
-
-<script>
-
-function confirmar_exclusao(codigo_pedido) {
-	 
-	 var resposta = confirm("Deseja continuar com a exclusão?");
-	 
-	 if (resposta == true) {
-	 
-		  window.location.href = "excluir.php?codigo_pedido="+codigo_pedido;
-	 }
-}
-</script>
-
-<script>
-
-function confirmar_exclusao(codigo_produto) {
-	 
-	 var resposta = confirm("Deseja continuar com a exclusão?");
-	 
-	 if (resposta == true) {
-	 
-		  window.location.href = "excluir.php?codigo_produto="+codigo_produto;
-	 }
-}
-</script>
 	
 </head>
 
